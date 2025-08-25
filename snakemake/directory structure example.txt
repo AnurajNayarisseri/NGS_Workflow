@@ -1,1 +1,10 @@
+project/
+├── raw_data/
+│   └── sample1_R1.fastq.gz
+├── Snakefile
+├── config.yaml
+├── trimmed/           ← Snakemake output
+├── qc/                ← Snakemake output
+├── main.nf            ← Nextflow pipeline
+├── results/           ← Nextflow output (BAM, VCF)
 
