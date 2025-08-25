@@ -1,0 +1,2 @@
+name: gatk
+dependencies: [gatk4=4.5.0.0]
