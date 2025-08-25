@@ -1,1 +1,17 @@
 
+                    ┌──────────────────────────┐
+                    │     Raw FASTQ Files      │
+                    └────────────┬─────────────┘
+                                 │
+                        ┌────────▼────────┐
+                        │   Snakemake     │
+                        │   Preprocessing │
+                        │ (FastQC, Cutadapt)
+                        └───────┬─────────┘
+                                │
+              Trimmed FASTQ ───►
+                        ┌───────▼────────┐
+                        │   Nextflow     │
+                        │ (BWA, Samtools,│
+                        │  FreeBayes)    │
+                        └────────────────┘
