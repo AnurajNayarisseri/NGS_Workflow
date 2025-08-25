@@ -1,1 +1,5 @@
+rule trim:
+  input: "raw/{sample}.fastq"
+  output: "trimmed/{sample}.fq"
+  shell: "cutadapt -o {output} {input}"
 
