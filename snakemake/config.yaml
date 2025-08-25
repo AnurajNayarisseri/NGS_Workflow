@@ -1,0 +1,3 @@
+mode: wgs
+ref_fa: ../ref/genome.fa
+samples: []
