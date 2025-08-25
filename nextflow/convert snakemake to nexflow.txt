@@ -1,1 +1,13 @@
+process TRIM {
+    input:
+    path fastq_file
+
+    output:
+    path "trimmed.fq"
+
+    script:
+    """
+    cutadapt -o trimmed.fq ${fastq_file}
+    """
+}
 
