@@ -1,1 +1,26 @@
-# Snakemake workflow placeholder
+# config.yaml
+samples:
+  - sample1
+  - sample2
+
+rule all:
+  input:
+    expand("trimmed/{sample}_R1_trimmed.fastq.gz", sample=config["samples"]),
+    expand("qc/{sample}_R1_fastqc.html", sample=config["samples"])
+
+rule fastqc:
+  input:
+    "raw_data/{sample}_R1.fastq.gz"
+  output:
+    html="qc/{sample}_R1_fastqc.html",
+    zip="qc/{sample}_R1_fastqc.zip"
+  shell:
+    "fastqc {input} -o qc/"
+
+rule cutadapt:
+  input:
+    "raw_data/{sample}_R1.fastq.gz"
+  output:
+    "trimmed/{sample}_R1_trimmed.fastq.gz"
+  shell:
+    "cutadapt -q 20 -o {output} {input}"
